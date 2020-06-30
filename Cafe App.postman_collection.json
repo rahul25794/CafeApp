@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "4d71aa70-8291-47ba-af64-7160e4cafa02",
+		"name": "Cafe App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllMachine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddMachine",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/?name=Cafe-2&numberOfOutlets=4",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Cafe-2"
+						},
+						{
+							"key": "numberOfOutlets",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMachine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/Cafe-2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Cafe-2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Low Stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/Cafe-2/stock",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Cafe-2",
+						"stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Stock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/Cafe-2/stock?name=Milk&quantity=10",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Cafe-2",
+						"stock"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Milk"
+						},
+						{
+							"key": "quantity",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add recipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ingrediants",
+							"value": "[{\"name\":\"Milk\",\"quantity\":\"1\"},{\"name\":\"Sugar\",\"quantity\":\"1.5\"}]"
+						},
+						{
+							"key": "name",
+							"value": "Coffee-1"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/Cafe-2/recipe",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Cafe-2",
+						"recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make Coffee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/Cafe-1/Cappuccino",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"Cafe-1",
+						"Cappuccino"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a400d73b-afac-421d-82f9-cc214ca9d32d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d0b2a5fe-3aa7-4df7-a7da-ab7525070546",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "8b62e913-8947-4b59-8e2c-4b38c98a27f3",
+			"key": "host",
+			"value": "localhost:8181",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

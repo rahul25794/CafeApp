@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Coffee {
     private String name;
-    private List<Ingrediant> ingrediants;
+    private transient List<Ingrediant> ingrediants;
 
     public Coffee(String name) {
         this.name = name;
@@ -18,7 +18,7 @@ public class Coffee {
         return ingrediants;
     }
 
-    public void addIngrediants(List<Ingrediant> ingrediants) {
+    public void setIngrediants(List<Ingrediant> ingrediants) {
         this.ingrediants = ingrediants;
     }
 

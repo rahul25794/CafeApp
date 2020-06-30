@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.cafe.app.exception.ApiException;
 import com.cafe.app.objects.CoffeeMachine;
 
 public class InMemory implements Storage {
@@ -28,7 +29,10 @@ public class InMemory implements Storage {
     }
 
     @Override
-    public CoffeeMachine getMachine(String name) {
+    public CoffeeMachine getMachine(String name) throws ApiException {
+        if (!storage.containsKey(name)) {
+            throw new ApiException("No coffee machine with this name.");
+        }
         return storage.get(name);
     }
 

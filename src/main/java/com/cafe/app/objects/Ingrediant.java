@@ -8,10 +8,6 @@ public class Ingrediant {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Double getQuantity() {
         return quantity;
     }
@@ -19,4 +15,10 @@ public class Ingrediant {
     public void setQuantity(Double quantity) {
         this.quantity = quantity;
     }
+
+    public Ingrediant(String name, Double quantity) {
+        this.name = name;
+        this.quantity = quantity;
+    }
+
 }
